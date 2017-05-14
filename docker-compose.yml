@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+    nginx:
+        image: justin8/simple-proxy
+        network_mode: bridge
+        environment:
+          - "DNS_TLD=dray.be"
+          - "VIRTUAL_PORT=8000"
+          - "VIRTUAL_HOST=hass.dray.be"
+          - "LETSENCRYPT_HOST=hass.dray.be"
+          - "LETSENCRYPT_EMAIL=abachi+proxy-config@dray.be"
+        volumes:
+          - ./nginx-config.yml:/config.yml:ro
+        ports:
+          - "8000:8000"
+        depends_on:
+          - vpn
+        links:
+          - vpn
