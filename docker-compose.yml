@@ -2,7 +2,7 @@ version: "2"
 
 services:
     nginx:
-        image: justin8/simple-proxy
+        image: justin8/simple-proxy:armhf
         network_mode: bridge
         environment:
           - "DNS_TLD=dray.id.au"
