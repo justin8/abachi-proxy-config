@@ -7,8 +7,8 @@ services:
         environment:
           - "DNS_TLD=dray.id.au"
           - "VIRTUAL_PORT=8000"
-          - "VIRTUAL_HOST=hass.dray.id.au,backups.dray.id.au,grafana.dray.id.au"
-          - "LETSENCRYPT_HOST=hass.dray.id.au,backups.dray.id.au,grafana.dray.id.au"
+          - "VIRTUAL_HOST=hass.dray.id.au,backups.dray.id.au,grafana.dray.id.au,node-red.dray.id.au"
+          - "LETSENCRYPT_HOST=hass.dray.id.au,backups.dray.id.au,grafana.dray.id.au,node-red.dray.id.au"
           - "LETSENCRYPT_EMAIL=abachi+proxy-config@dray.id.au"
         volumes:
           - ./nginx-config.yml:/config.yml:ro
